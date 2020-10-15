@@ -12,7 +12,7 @@ Pre-requisites:
 ## Create an app
 1. Do click under My Apps. An overlay frame will allow you to choose between "Start with your data", "Start with an idea" or "Start with a sample app". During this short lab, we will explore a sample app. Click "Start with a sample app".
 ![](img/sample.png)
-1. Select a name for your app. In this case we will use  ```AppsheetLab1```. Under categories, select Logistics. Select *Shipment Tracking* as the sample app to deploy.
+ç1. Select a name for your app. In this case we will use  ```AppsheetLab1```. Under categories, select Logistics. Select *Shipment Tracking* as the sample app to deploy.
 1. Waiting until the new app is set up.
 1. Close the pop-up informational help tool.
 
@@ -44,7 +44,7 @@ We now see 4 different Table: Users, Vendors, Building_Sites and Delivery_Packag
 
 2. Click in *View Source*. This will open a new tab in your browser with the worksheet you are using as the main data source of your application. Explore the different tabs and fields to see the different intents of the application.
 ![](img/view-source.png)
-1. Go back to Appsheet and, just besides *Vew Source*, click on View Columns. This will the main panel with information abou the Columns and how did Appsheet interpretated the worksheet fields. If we click on each of the edit icons of each field, we open a contextual menu with more information to change about these fields. In this example click on the edit button of *User_Name*. 
+1. Go back to Appsheet and, just besides *View Source*, click on View Columns. This will the main panel with information about the Columns and how did Appsheet interpretated the worksheet fields. If we click on each of the edit icons of each field, we open a contextual menu with more information to change about these fields. In this example click on the edit button of *User_Name*. 
 1.We want to change the display name of this field. For that, we will scroll to the Display bar and click to open the menu. Let's change the display name of this field to ```Name```. Click on the text box and the *Expression Assistant* will open. Get familiarized with this Expression Assistant since it is a poweful tool to create conditions, expressions, deep links and auto-generate values in many of the contexts of Appsheet. Write ```Name``` in the text box. Click Save and then Done.
 ![](img/name.png)
 1. To see the changes reflected on our preview application we need to save the application. Click on the Save button, top right corner of the Top bar menu.
@@ -64,18 +64,31 @@ Take quick look at the table *Delivery_Packages* as we did for *Users*. Review i
 When you show the contents of a table in your app, you do not need to show every row, every column, and every action. Instead, you can "slice" the data, choosing a subset of the columns, actions, and rows. A slice is a subset of the rows, columns, and actions of a table.
 
 1. Go to the *Slices* menu under In this case, select *Delivered*. Notice that this slice has a condition: ```[Package_Status]=Delivered```. This condition provides a row filter (show/not show). Ig the *Package_Status* has the value *Delivered*, then the row will be show in the slice. If not, the row will be hide.
-1. Under *Slice Columns*, we can select all the columns or just select those columns that we want to show in this slice. You can remove *Driver Name* by clicking the trash bin icon at the right of this column. 
+1. Under *Slice Columns*, we can select all the columns or just select those columns that we want to show in this slice. You can remove *Package_Driver* by clicking the trash bin icon at the right of this column. 
 1. Within the app, click on *Overview*. Scroll down until Delivered and select one of the delivered packages.
 
     ![](img/overview-delivered.png)
 
-    You should be able to see that all the Driver's name is not present any more. Test a few fields and, at any time, if you want to recover the fields into the slice, click under the + button. 
+    You should be able to see that all the *Package_Driver* is not present any more. Test a few fields and, at any time, if you want to recover the fields into the slice, click under the + button. 
 
     ![](img/plus-button.png)
 
 ## Exploring views
 
-Let's focus now on views. Views allow you to control how, when, and where data is presented to the app user, and how the user interacts with the data.
+Let's focus now on views. Views allow you to control how, when, and where data is presented to the app user, and how the user interacts with the data. For that, click on UX under the Navigation bar. Under View's tab, we have 3 different options, Create views, Primary views and Menu views. We an also search for specific views (really handy when we have rich and poweful apps).
+    ![](img/views-main.png)
+1. Let's click on the *Drivers* Primary view. 
+1. Now, in the app preview section, click the Drivers icon to see real time changes in the app.
+1. We are going to change the view type from *Table* to *Gallery*.
 
+    ![](img/initial-gallery-mode.png)
+1. In this view, we are showing pictures and names of the *Delivery_Packages*. This is not useful when searching by Drivers so, under *For this data*, change it *Users*. The changes should reflect inmidiatly. 
 
+    ![](img/users-initial-gallery-mode.png)
+
+1. Finally, one last change before we move on. Let's sort the list by *User_Name*. T odo this, under View Options, click *Add* and select User_Name as the sorting option.
+
+    ![](img/sorting-by-name.png)
+
+## Exploring Behavior
 
