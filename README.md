@@ -1,4 +1,10 @@
-Pre-requisites: 
+## My first app with Appsheet
+
+Hello world! During this lab we will explore how to create our first Appsheet app and the different features the platform offers. Keep in mind that the intention of this lab is to give a high overview of the solution and help you initiate into the citizen developer's world! Let's start!
+
+![](img/appsheet-logo.png)
+
+## Pre-requisites: 
 1) A Google Account
 
 ## Login into Appsheet
@@ -92,3 +98,66 @@ Let's focus now on views. Views allow you to control how, when, and where data i
 
 ## Exploring Behavior
 
+### Actions
+
+By default, standard behaviors are automatically applied to every app based on the structure of the data (tables and slices). As the app creator, you can change and augment these standard behaviors. The Behavior tab of the editor is the place to make these changes.
+
+The primary behavioral concept is an action. An action is an operation that changes the state of the app. Some of the actions are automatically defined by the system (system-defined) and can be modified by you, the app creator. You can also explicitly create new actions.
+
+For this lab, we will explore one of the current actions.
+
+1. On the Left Navigation bar, click on Behavior. This will show the current actions assigned in the sample app.
+    
+    ![](img/behaviors.png)
+1. For the sake of simplicity, we will review Delivery_Time. Click on that behavior to see the implementation.
+
+    ![](img/behavior_delivery_time.png)
+
+    The important piece is to understand the flow of a behavior: "For a record of a table, do this by setting these columns". In this case:
+    
+    1.  For *Delivery_Packages* table, *set the values of some columns in this row*, these columns being *Delivery_Time* with the value *NOW()*. In other words, whenever we dropoff a package, we set the delivery time to the current time.
+
+        ![](img/delivery-time-show.png)
+
+Try yourself to drop off a package and see how the field changes.
+
+Feel free to explore more complex actions in this example or even create/update to test the flow in the app preview.
+
+### Workflows
+
+It is important to trigger certain actions whenever something happens that might need to go outside of the application. For example, send an email to the customer once the package has been delivered or send a webhook to a certain external app that would trigger a business complex workflow in another system. You can do this easily with worflows.
+
+At the top bar, select *Workflow* and then *Delivery_Packages*.
+    
+![](img/workflow-delivery.png)
+
+Let's explore what happens here when a package is assigned to a driver.
+
+![](img/workflow-package-assigned.png)
+
+1. Click on the section *When this happens...*: Based on a target data (Delivery_Packages), on an add only action.
+1. Click on the section *If this is true*: Only if the added data fits this condition:
+    ```
+    AND([_thisrow_before].[Package_Driver] <> [_thisrow_after].[Package_Driver],ISNOTBLANK([Package_Driver]),[Package_Status]="Assigned")
+    ```
+    Basically, if we assigned a package to a driver (not blank) and it's different from a previously assigned driver.
+1. Click on the section *Do this*: We send an email to the package driver.
+
+## Deploy your app
+
+Now it's time to see your app in action! For that, on the Left navigation bar, click on *Not Deployed*. You will see a bunch of warnings that should be addressed before deploying the app. For simplicity, we will go ahead and deploy by clicking on *Move app to deployed state despite errors*.
+
+![](img/deploying-app.png)
+
+Congratulations! Your app has been deployed! To see a link to access your app, click on Users > Links. Copy the Browser link and access your app!
+
+![](img/deployed-link.png)
+
+
+## Wrap up
+
+You have successfully created your first Appsheet app. Feel free to explore other examples or create your own based on your data. Here is a page to Appsheet documentation to see all the features and capabilities of the platform.
+- https://www.appsheet.com/support
+- https://help.appsheet.com/en/
+
+Become a **Citizen developer**!
