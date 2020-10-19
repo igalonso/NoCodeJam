@@ -142,10 +142,6 @@ Feel free to explore more complex actions in this example or even create/update 
 
 It is important to trigger certain actions whenever something happens that might need to go outside of the application. For example, send an email to the customer once the package has been delivered or send a webhook to a certain external app that would trigger a complex business workflow in another system. You can do this easily with workflows.
 
-At the top bar, select *Workflow* and then *Package Delivered*.
-    
-![](img/workflow-delivery.png)
-
 Let's explore what happens here when a package is assigned to a driver.
 
 ![](img/workflow-package-assigned.png)
