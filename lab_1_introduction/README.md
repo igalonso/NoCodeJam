@@ -47,7 +47,7 @@ Tables are comprised of columns, which identify the different components of each
 
 We now see four different tables: Users, Vendors, Building_Sites and Delivery_Packages. Click on Users.
     
-    ![](img/users.png)
+   ![](img/users.png)
 
 1. Under the different tabs, we can see Storage, Security, Scale, Localization and Documentation. 
 - The first one, Storage, gives us information about the source of the data, in this case, Google Sheets. 
